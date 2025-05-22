@@ -1,0 +1,24 @@
+'use client'
+
+import { db } from "@/lib/firebase";
+import { doc, deleteDoc } from "firebase/firestore";
+
+export default function DeleteData({ chatid }) {   
+
+    const deleteChat = async () => {
+         if (typeof chatid !== 'string' || chatid.trim() === '') {
+        console.error("Invalid ID:", chatid);
+        return;  
+    }
+     try {
+        const chatDoc = doc(db, "chats", chatid);
+        await deleteDoc(chatDoc);
+    } catch (error) {}
+    }
+
+    return (
+        <>
+            <button onClick={deleteChat}>Delete</button>
+        </>
+    );
+}
