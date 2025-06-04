@@ -7,7 +7,7 @@ import DeleteData from "./DeleteData";
 
 export default function FetchData() {
     const [chatsList, setChatsList] = useState([]);
-    const chatCollectionRef = collection(db, "chats");
+    const chatCollectionRef = collection(db, "Chats");
 
     useEffect(() => {
     const getChats = async () => {

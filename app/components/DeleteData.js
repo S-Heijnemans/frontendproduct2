@@ -11,7 +11,7 @@ export default function DeleteData({ chatid }) {
         return;  
     }
      try {
-        const chatDoc = doc(db, "chats", chatid);
+        const chatDoc = doc(db, "Chats", chatid);
         await deleteDoc(chatDoc);
     } catch (error) {}
     }
