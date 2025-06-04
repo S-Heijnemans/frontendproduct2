@@ -5,7 +5,8 @@ import { doc, deleteDoc } from "firebase/firestore";
 
 export default function DeleteData({ chatid }) {   
 
-    const deleteChat = async () => {
+    const deleteChat = async (e) => {
+        e.preventDefault();
          if (typeof chatid !== 'string' || chatid.trim() === '') {
         console.error("Invalid ID:", chatid);
         return;  
