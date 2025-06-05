@@ -1,4 +1,6 @@
 'use client'
+import Image from 'next/image';
+import logo from "../assets/logo.png";
 function LandingPage() {
     return(
 <html lang="en">
@@ -10,13 +12,15 @@ function LandingPage() {
 </head>
 <body className="bg-[repeating-linear-gradient(45deg,#0d3b3f, #0d3b3f_10px, #1d4f52_10px, #1d4f52_20px)] font-sans text-black min-h-screen">
 
-  <header className="bg-[rgba(200,200,150,0.6)] px-6 py-4 flex justify-end gap-3 items-center">
-    <button className="bg-[#ff928f] rounded-full px-8 py-2"></button>
-    <button className="bg-[#ff928f] rounded-full px-4 py-2"></button>
-    <button className="bg-[#ff928f] rounded-full px-4 py-2 border border-black">
+  <header 
+    className="bg-[rgba(200,200,150,0.6)] px-20 py-8 flex justify-end gap-20 items-center">
+   <Image src={logo} alt="Logo" width={100} height={100} margin-right={200} />
+    <button className="bg-[#ff928f] rounded-full px-20 py-8 "></button>
+    <button className="bg-[#ff928f] rounded-full px-20 py-8"></button>
+    <button className="bg-[#ff928f] rounded-full px-8 py-8 border border-black">
       <span>👤</span>
     </button>
-    <button className="bg-[#ff928f] rounded-full p-2">
+    <button className="bg-[#ff928f] rounded-full p-8">
       <span>⚙️</span>
     </button>
   </header>
