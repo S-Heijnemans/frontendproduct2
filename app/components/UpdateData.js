@@ -16,7 +16,7 @@ export default function UpdateData({ chatid }) {
             console.error("Error updating document:", error);
         }
     };
-
+ 
     return (
         <form onSubmit={UpdateMessage}>
             <input 
