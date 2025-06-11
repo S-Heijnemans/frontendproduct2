@@ -24,7 +24,7 @@ export default function FetchData() {
     return (
         <div>
             {chatsList.map((chat) =>
-                <div key={chat.id} classNameName="flex flex-row gap-4">
+                <div key={chat.id} className="flex flex-row gap-4">
                     <li>{chat.messages}</li> 
                     <UpdateData chatid={chat.id} />
                     <DeleteData chatid={chat.id} />
