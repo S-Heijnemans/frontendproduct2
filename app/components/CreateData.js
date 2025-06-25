@@ -9,7 +9,10 @@ export default function CreateData() {
     const AddChat = async (e)  => {
         e.preventDefault();
         const ChatDoc = collection(db, "Chats");
-        await addDoc(ChatDoc,{messages: message});
+        await addDoc(ChatDoc,{
+            messages: message,
+            likes: increment(0)
+        });
         setMessage("");
     }
 

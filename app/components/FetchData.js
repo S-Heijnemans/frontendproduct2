@@ -6,6 +6,7 @@ import { db } from "@/lib/firebase";
 import ReactingMessage from "./ReactingMessage";
 import UpdateData from "./UpdateData";
 import DeleteData from "./DeleteData";
+import LikeMessage from "./LikeMessage";
 
 function ChatWithReactions({ chat }) {
   const [reactions, setReactions] = useState([]);
@@ -28,6 +29,7 @@ function ChatWithReactions({ chat }) {
         <strong>{chat.messages}</strong> 
         <UpdateData chatid={chat.id} />
         <DeleteData chatid={chat.id} />
+        <LikeMessage chatid={chat.id}  currentLikes={chat.likes || 0}/>
       </div>
 
       <ReactingMessage parentId={chat.id} />
