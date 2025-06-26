@@ -1,108 +1,73 @@
 'use client'
 import Image from 'next/image';
+import Link from 'next/link';
 import logo from "../assets/logo.png";
+
 function LandingPage() {
     return(
-  <>
-      <header 
-        className="bg-[rgba(200,200,150,0.6)] px-20 py-8 flex justify-end gap-20 items-center">
-      <Image src={logo} alt="Logo" width={100} height={100} margin-right={200} />
-        <button className="bg-[#ff928f] rounded-full px-20 py-8 "></button>
-        <button className="bg-[#ff928f] rounded-full px-20 py-8"></button>
-        <button className="bg-[#ff928f] rounded-full px-8 py-8 border border-black">
-          <span>👤</span>
-        </button>
-        <button className="bg-[#ff928f] rounded-full p-8">
-          <span>⚙️</span>
-        </button>
-      </header>
+      <>
+      <nav className="bg-orange-300">
+        <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div className="relative flex h-16 items-center justify-between">
+            <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+
+              <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
+                <span className="absolute -inset-0.5"></span>
+                <span className="sr-only">Open main menu</span>
+                <svg className="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <svg className="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+              <div className="flex shrink-0 items-center">
+                <Image className="h-8 w-auto" src={logo} alt="Your Company" />
+              </div>
+              <div className="hidden sm:ml-6 sm:block">
+                <div className="flex space-x-4">
+                  <a href="#" className="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white" aria-current="page">Dashboard</a>
+                  
+                </div>
+              </div>
+            </div>
+            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <button type="button" className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                <span className="absolute -inset-1.5"></span>
+                <span className="sr-only">View notifications</span>
+                <svg className="size-6" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                </svg>
+              </button>
+              {/* Login knop */}
+              <Link href="/login">
+                <button className="ml-4 bg-blue-500 text-white px-4 py-2 rounded">
+                  Ga naar Login
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="sm:hidden" id="mobile-menu">
+          <div className="space-y-1 px-2 pt-2 pb-3">
+            <a href="#" className="block rounded-md bg-gray-900 px-3 py-2 text-base font-medium text-white" aria-current="page">Dashboard</a>
+          </div>
+        </div>
+      </nav>
 
       <main className="flex flex-col md:flex-row p-6 gap-6">
         <section className="bg-teal-700/70 border-2 border-teal-400 rounded-xl p-4 w-full md:w-64 text-white">
           <h2 className="text-lg font-semibold mb-4">Favorite Circl’s</h2>
-          <div className="flex items-center justify-between bg-gray-100 text-black rounded-lg px-3 py-2 mb-2">
-            <div className="flex items-center gap-2">
-              <span className="w-4 h-4 bg-red-500 rounded-full"></span>
-              Circl 1
-            </div>
-            <span>★</span>
-          </div>
-          <div className="flex items-center justify-between bg-gray-100 text-black rounded-lg px-3 py-2">
-            <div className="flex items-center gap-2">
-              <span className="w-4 h-4 bg-pink-500 rounded-full"></span>
-              Circl 5
-            </div>
-            <span>★</span>
-          </div>
         </section>
 
         <section className="bg-white/30 rounded-3xl p-6 flex-1">
           <h2 className="text-2xl font-semibold mb-4 text-black">Top Circl’s</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="bg-gray-100 rounded-xl p-4">
-              <div className="flex justify-between items-center mb-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 bg-red-500 rounded-full"></span>
-                  <span className="font-semibold">Circl 1</span>
-                </div>
-                <span>★</span>
-              </div>
-              <div className="space-y-2">
-                <div className="h-4 bg-white rounded-full"></div>
-                <div className="h-4 bg-white/70 rounded-full"></div>
-                <div className="h-4 bg-white/40 rounded-full"></div>
-              </div>
-            </div>
-
-            <div className="bg-gray-100 rounded-xl p-4">
-              <div className="flex justify-between items-center mb-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 bg-teal-500 rounded-full"></span>
-                  <span className="font-semibold">Circl 2</span>
-                </div>
-                <span>☆</span>
-              </div>
-              <div className="space-y-2">
-                <div className="h-4 bg-white rounded-full"></div>
-                <div className="h-4 bg-white/70 rounded-full"></div>
-                <div className="h-4 bg-white/40 rounded-full"></div>
-              </div>
-            </div>
-
-            <div className="bg-gray-100 rounded-xl p-4">
-              <div className="flex justify-between items-center mb-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 bg-sky-500 rounded-full"></span>
-                  <span className="font-semibold">Circl 3</span>
-                </div>
-                <span>☆</span>
-              </div>
-              <div className="space-y-2">
-                <div className="h-4 bg-white rounded-full"></div>
-                <div className="h-4 bg-white/70 rounded-full"></div>
-                <div className="h-4 bg-white/40 rounded-full"></div>
-              </div>
-            </div>
-
-            <div className="bg-gray-100 rounded-xl p-4">
-              <div className="flex justify-between items-center mb-3">
-                <div className="flex items-center gap-2">
-                  <span className="w-6 h-6 bg-red-800 rounded-full"></span>
-                  <span className="font-semibold">Circl 4</span>
-                </div>
-                <span>☆</span>
-              </div>
-              <div className="space-y-2">
-                <div className="h-4 bg-white rounded-full"></div>
-                <div className="h-4 bg-white/70 rounded-full"></div>
-                <div className="h-4 bg-white/40 rounded-full"></div>
-              </div>
-            </div>
-          </div>
         </section>
       </main>
-  </>
-
+      </>
     )
 }
 
