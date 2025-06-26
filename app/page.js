@@ -6,11 +6,11 @@ import ProfileShow from "./components/profile/ProfileShow";
 export default function Home() {
   return (
     <>
-      <FetchData />
-      <CreateData/>
+      {/* <FetchData />
+      <CreateData/> */}
       <LandingPage/>
-      <ProfileShow />
-      <LoginPage/>
+      {/* <ProfileShow />
+      <LoginPage/> */}
     </>
   );
 }
