@@ -5,6 +5,7 @@ import { auth, db } from "@/lib/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { onAuthStateChanged } from "firebase/auth";
 import AddFriend from "./AddFriends";
+import ProfileMessage from "./ProfileMessage";
 
 export default function ProfileShow() {
   const [displayName, setDisplayName] = useState("");
@@ -94,6 +95,10 @@ export default function ProfileShow() {
       </button>
 
       <AddFriend />
+
+      <div>
+        <ProfileMessage userid={user.uid}/>
+      </div>
     </div>
   );
 }
