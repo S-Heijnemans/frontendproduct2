@@ -54,7 +54,7 @@ export default function ProfileShow() {
 
     try {
       const docRef = doc(db, "Users", user.uid);
-      await updateDoc(docRef, { displayName, isPrivate });
+      await updateDoc(docRef, { displayName: displayName.toLowerCase(), isPrivate });
       alert("Profiel bijgewerkt!");
     } catch (err) {
       alert("Fout bij opslaan profiel: " + err.message);
